@@ -1,12 +1,12 @@
 <?php
 
 class Produk {
-    public $judul = "judul",
-            $penulis = "penulis",
-            $penerbit = "penerbit",
-            $harga = 0;
+    public $judul,
+           $penulis,
+           $penerbit,
+           $harga;
 
-    public function __construct($judul, $penulis, $penerbit, $harga = 0) {
+    public function __construct($judul, $penulis, $penerbit, $harga) {
         $this->judul = $judul;
         $this->penulis = $penulis;
         $this->penerbit = $penerbit;
@@ -26,7 +26,7 @@ class Produk {
 class Komik extends Produk {
     public $jmlHalaman;
 
-    public function __construct($judul, $penulis, $penerbit, $harga = 0, $jmlHalaman = 0) {
+    public function __construct($judul, $penulis, $penerbit, $harga, $jmlHalaman) {
        parent::__construct($judul, $penulis, $penerbit, $harga);
        $this->jmlHalaman = $jmlHalaman;
     }
@@ -40,7 +40,7 @@ class Komik extends Produk {
 class Game extends Produk {
     public $waktuMain;
 
-    public function __construct($judul, $penulis, $penerbit, $harga = 0, $waktuMain = 0) {
+    public function __construct($judul, $penulis, $penerbit, $harga, $waktuMain) {
         parent::__construct($judul, $penulis, $penerbit, $harga);
         $this->waktuMain = $waktuMain;
     }
@@ -64,4 +64,3 @@ $produk2 = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 250000, 50);
 echo $produk1->getInfoProduk();
 echo "<br>";
 echo $produk2->getInfoProduk();
-
